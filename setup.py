@@ -12,7 +12,6 @@ setup(
     packages=[
         "masonite.backups",
         "masonite.backups.providers",
-        "masonite.backups.controllers",
         "masonite.backups.commands",
     ],
     package_dir={"": "src"},
