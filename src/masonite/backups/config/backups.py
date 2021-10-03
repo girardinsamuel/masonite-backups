@@ -1,12 +1,13 @@
 """Backups Settings"""
+from masonite.environment import env
 
-"""
-|--------------------------------------------------------------------------
-| A Heading of The Setting Being Set
-|--------------------------------------------------------------------------
-|
-| A quick description
-|
-"""
-
-SETTING = "some value"
+BACKUP = {
+    "name": env("APP_NAME", "masonite-project"),
+    "source": {
+        "files": [],
+        "databases": [],
+    },
+    "destination": {
+        "disks": []
+    }
+}

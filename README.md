@@ -16,12 +16,14 @@
 
 ## Introduction
 
-Easily backup (database and assets) your Masonite projects
+Easily backup (database and assets) your Masonite apps
 
 ## Features
 
-- _Add your package main features here_
-- _and here_
+- Database (PostgreSQL, SQLite, MySQL) backup
+- Assets backup
+- Backup upload to defined storage (local, S3...)
+- Others to come...
 
 ## Official Masonite Documentation
 
@@ -49,10 +51,8 @@ from masonite.backups import BackupsProvider
 # ...
 PROVIDERS = [
     # ...
-
     # Third Party Providers
     BackupsProvider,
-
     # ...
 ]
 ```
@@ -69,9 +69,27 @@ OR (depending on your preferences)
 python craft publish BackupsProvider
 ```
 
+Specify sources, destination, name at minimum.
+
 ## Usage
 
-_Explain how to use your package_
+To make a backup of all assets and databases defined in config file run this command:
+
+```bash
+python craft backups:run
+```
+
+To make a backup of databases only:
+
+```bash
+python craft backups:run --only-db
+```
+
+To make a backup of assets only:
+
+```bash
+python craft backups:run --only-assets
+```
 
 ## Contributing
 
@@ -83,6 +101,4 @@ Please read the [Contributing Documentation](CONTRIBUTING.md) here.
 
 ## License
 
-
 Masonite Backups is open-sourced software licensed under the [MIT license](LICENSE).
-
