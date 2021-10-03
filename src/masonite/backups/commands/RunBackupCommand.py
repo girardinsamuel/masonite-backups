@@ -11,7 +11,7 @@ package_directory = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
 class RunBackupCommand(Command):
     """
-    Create a backup of your project
+    Create a backup of your project (by default assets and db)
 
     backups:run
         {--only-assets=? : Backup only assets}
